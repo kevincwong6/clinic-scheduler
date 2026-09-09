@@ -12,6 +12,7 @@
         <a href="https://easyappointments.org" target="_blank">Easy!Appointments</a>
 
         <span>v<?= config('version') ?></span>
+        <span class="text-muted ms-1">| Clinic Scheduler v0.1.1</span>
     </div>
 
     <div class="mb-3 me-lg-5 mb-lg-0">
