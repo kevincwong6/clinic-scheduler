@@ -54,12 +54,8 @@
                     <?= lang('services') ?>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <a class="dropdown-item" href="<?= site_url('services') ?>">
-                        <?= lang('services') ?>
-                    </a>
-                    <a class="dropdown-item" href="<?= site_url('service_categories') ?>">
-                        <?= lang('categories') ?>
-                    </a>
+                    <a class="dropdown-item" href="<?= site_url('services') ?>"><?= lang('services') ?></a>
+                    <a class="dropdown-item" href="<?= site_url('service_categories') ?>"><?= lang('categories') ?></a>
                 </div>
             </li>
 
@@ -72,16 +68,17 @@
                     <?= lang('users') ?>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <a class="dropdown-item" href="<?= site_url('providers') ?>">
-                        <?= lang('providers') ?>
-                    </a>
-                    <a class="dropdown-item" href="<?= site_url('secretaries') ?>">
-                        <?= lang('secretaries') ?>
-                    </a>
-                    <a class="dropdown-item" href="<?= site_url('admins') ?>">
-                        <?= lang('admins') ?>
-                    </a>
+                    <a class="dropdown-item" href="<?= site_url('providers') ?>"><?= lang('providers') ?></a>
+                    <a class="dropdown-item" href="<?= site_url('secretaries') ?>"><?= lang('secretaries') ?></a>
+                    <a class="dropdown-item" href="<?= site_url('admins') ?>"><?= lang('admins') ?></a>
                 </div>
+            </li>
+
+            <li class="nav-item text-center" style="min-width: 100px;">
+                <a id="select-language" href="#" class="nav-link text-white fw-light py-3 px-3">
+                    <i class="fas fa-language me-2"></i>
+                    <?= ucfirst(config('language')) ?>
+                </a>
             </li>
 
             <?php $hidden = can('view', PRIV_SYSTEM_SETTINGS) || can('view', PRIV_USER_SETTINGS) ? '' : 'd-none'; ?>
@@ -95,33 +92,16 @@
                 <div class="dropdown-menu dropdown-menu-end">
                     <?php if (can('view', PRIV_SYSTEM_SETTINGS)): ?>
                         <a class="dropdown-item" href="<?= site_url('general_settings') ?>">
-                            <i class="fas fa-cogs me-2"></i>
-                            <?= lang('settings') ?>
+                            <i class="fas fa-cogs me-2"></i><?= lang('settings') ?>
                         </a>
                     <?php endif; ?>
-
-                    <a class="dropdown-item" href="<?= site_url('account') ?>">
-                        <i class="fas fa-user me-2"></i>
-                        <?= lang('account') ?>
-                    </a>
-                    <a class="dropdown-item" href="<?= site_url('about') ?>">
-                        <i class="fas fa-info-circle me-2"></i>
-                        <?= lang('about') ?>
-                    </a>
-                    <a class="dropdown-item text-danger" href="https://easyappointments.org/premium" target="_blank">
-                        <i class="fas fa-crown text-warning me-2"></i>
-                        Premium
-                    </a>
+                    <a class="dropdown-item" href="<?= site_url('account') ?>"><i class="fas fa-user me-2"></i><?= lang('account') ?></a>
+                    <a class="dropdown-item" href="<?= site_url('about') ?>"><i class="fas fa-info-circle me-2"></i><?= lang('about') ?></a>
+                    <a class="dropdown-item text-danger" href="https://easyappointments.org/premium" target="_blank"><i class="fas fa-crown text-warning me-2"></i>Premium</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?= site_url('booking') ?>" target="_blank">
-                        <i class="fas fa-external-link me-2"></i>
-                        <?= lang('booking') ?>
-                    </a>
+                    <a class="dropdown-item" href="<?= site_url('booking') ?>" target="_blank"><i class="fas fa-external-link me-2"></i><?= lang('booking') ?></a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?= site_url('logout') ?>">
-                        <i class="fas fa-sign-out me-2"></i>
-                        <?= lang('log_out') ?>
-                    </a>
+                    <a class="dropdown-item" href="<?= site_url('logout') ?>"><i class="fas fa-sign-out me-2"></i><?= lang('log_out') ?></a>
                 </div>
             </li>
         </ul>
@@ -131,7 +111,5 @@
 <div id="notification" style="display: none;"></div>
 
 <div id="loading" class="position-fixed top-0 start-0 w-100 h-100" style="display: none; z-index: 999999; background: rgba(255, 255, 255, 0.75);">
-    <div class="any-element animation is-loading d-block mx-auto">
-        &nbsp;
-    </div>
+    <div class="any-element animation is-loading d-block mx-auto">&nbsp;</div>
 </div>
