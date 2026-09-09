@@ -134,6 +134,14 @@ class EA_Controller extends CI_Controller
         }
 
         $this->lang->load('translations');
+
+        // Load clinic-specific wording after the upstream translations so
+        // custom labels can be maintained separately from Easy!Appointments.
+        $override_file = APPPATH . 'language/' . config('language') . '/clinic_scheduler_lang.php';
+
+        if (is_file($override_file)) {
+            $this->lang->load('clinic_scheduler');
+        }
     }
 
     /**
