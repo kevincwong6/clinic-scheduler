@@ -1,4 +1,5 @@
 <?php
+$clinic_scheduler_version = '0.1.2';
 /**
  * Local variables.
  *
@@ -12,7 +13,7 @@
         <a href="https://easyappointments.org" target="_blank">Easy!Appointments</a>
 
         <span>v<?= config('version') ?></span>
-        <span class="text-muted ms-1">| Clinic Scheduler v0.1.1</span>
+        <span class="text-muted ms-1">| Clinic Scheduler v<?= $clinic_scheduler_version ?></span>
     </div>
 
     <div class="mb-3 me-lg-5 mb-lg-0">
