@@ -74,10 +74,14 @@
                 </div>
             </li>
 
+            <?php
+            $clinic_name = setting('company_name');
+            $clinic_display_name = preg_replace('/\s+and\s+Acupuncture\s+Inc\.?$/i', '', $clinic_name);
+            ?>
             <li class="nav-item text-center" style="min-width: 180px;">
-                <span class="nav-link text-white fw-light py-3 px-3" title="Current clinic">
+                <span class="nav-link text-white fw-light py-3 px-3" title="<?= e($clinic_name) ?>">
                     <i class="fas fa-clinic-medical me-2"></i>
-                    <strong>Clinic:</strong> <?= e(setting('company_name')) ?>
+                    <strong>Clinic:</strong> <?= e($clinic_display_name) ?>
                 </span>
             </li>
 
