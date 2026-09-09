@@ -76,7 +76,7 @@
 
             <li class="nav-item text-center" style="min-width: 100px;">
                 <a id="select-language" href="#" class="nav-link text-white fw-light py-3 px-3">
-                    <i class="fas fa-language me-2"></i>
+                    <i class="fas fa-globe me-2"></i>
                     <?= ucfirst(config('language')) ?>
                 </a>
             </li>
