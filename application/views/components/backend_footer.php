@@ -1,5 +1,5 @@
 <?php
-$clinic_scheduler_version = '0.1.3';
+$clinic_scheduler_version = '0.1.4';
 /**
  * Local variables.
  *
