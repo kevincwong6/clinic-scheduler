@@ -74,6 +74,13 @@
                 </div>
             </li>
 
+            <li class="nav-item text-center" style="min-width: 180px;">
+                <span class="nav-link text-white fw-light py-3 px-3" title="Current clinic">
+                    <i class="fas fa-clinic-medical me-2"></i>
+                    <strong>Clinic:</strong> <?= e(setting('company_name')) ?>
+                </span>
+            </li>
+
             <li class="nav-item text-center" style="min-width: 100px;">
                 <a id="select-language" href="#" class="nav-link text-white fw-light py-3 px-3">
                     <i class="fas fa-globe me-2"></i>
