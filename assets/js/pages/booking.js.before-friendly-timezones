@@ -172,37 +172,6 @@ App.Pages.Booking = (function () {
         const isTimezoneSupported = $selectTimezone.find(`option[value="${browserTimezone}"]`).length > 0;
         $selectTimezone.val(isTimezoneSupported ? browserTimezone : 'UTC');
 
-        // Use patient-friendly timezone names while keeping the real
-        // IANA timezone values unchanged for scheduling calculations.
-        const friendlyTimezoneNames = {
-            'America/Los_Angeles': 'Pacific Time (Los Angeles)',
-            'America/Denver': 'Mountain Time (Denver)',
-            'America/Chicago': 'Central Time (Chicago)',
-            'America/New_York': 'Eastern Time (New York)',
-            'America/Phoenix': 'Arizona Time (Phoenix)',
-            'America/Anchorage': 'Alaska Time (Anchorage)',
-            'Pacific/Honolulu': 'Hawaii Time (Honolulu)',
-        };
-
-        $selectTimezone.find('option').each((index, option) => {
-            const $option = $(option);
-            const timezone = $option.val();
-
-            if (friendlyTimezoneNames[timezone]) {
-                $option.text(friendlyTimezoneNames[timezone]);
-                return;
-            }
-
-            // For other worldwide timezones, remove the technical UTC offset
-            // and make underscores easier to read.
-            const friendlyName = $option
-                .text()
-                .replace(/\\s*\\([+-]?\\d{1,2}:\\d{2}\\)\\s*$/, '')
-                .replaceAll('_', ' ');
-
-            $option.text(friendlyName);
-        });
-
         // Bind the event handlers (might not be necessary every time we use this class).
         addEventListeners();
 
